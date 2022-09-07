@@ -6,10 +6,10 @@ import { JsonRpc } from 'eosjs';
 import { UALProvider } from 'ual-reactjs-renderer';
 import { Wax } from "@eosdacio/ual-wax";
 import { Anchor } from 'ual-anchor';
-import { Ledger } from 'ual-ledger';
-import { Scatter } from 'ual-scatter';
-import { Starteos } from 'ual-starteos';
-import { Wombat } from 'ual-wombat';
+//import { Ledger } from 'ual-ledger';
+//import { Scatter } from 'ual-scatter';
+//import { Starteos } from 'ual-starteos';
+//import { Wombat } from 'ual-wombat';
 
 const appName = "wax-auth-ual-demo";
 
@@ -29,16 +29,17 @@ const rpc = new JsonRpc(endpoint);
 
 const wcw = new Wax([chains]);
 const anchor = new Anchor([chains], { appName: appName });
-const ledger  = new Ledger([chains]);
-const scatter = new Scatter([chains], { appName: appName });
-const starteos  = new Starteos([chains], { appName: appName });
-const wombat  = new Wombat([chains], { appName: appName });
+//const ledger  = new Ledger([chains]);
+//const scatter = new Scatter([chains], { appName: appName });
+//const starteos  = new Starteos([chains], { appName: appName });
+//const wombat  = new Wombat([chains], { appName: appName });
 
 ReactDOM.render(
     <>
         <UALProvider
             appName={appName}
-            authenticators={[wcw, anchor, ledger, scatter, starteos, wombat]}
+            //authenticators={[wcw, anchor, ledger, scatter, starteos, wombat]}
+            authenticators={[wcw, anchor]}
             chains={[chains]}
         >
             <App rpc={rpc} />
